@@ -1,4 +1,4 @@
-# File: .github/workflows/ci-cd.yml
+# File: .github/workflows/main.yml
 
 name: CI/CD Pipeline
 
@@ -28,6 +28,7 @@ jobs:
       run: npm test
 
   deploy:
+    name: Deploy
     needs: build-and-test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
