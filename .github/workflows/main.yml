@@ -14,19 +14,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Show directory structure
+        run: ls -R
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
+      # Replace "./correct-folder" once we find the right path
       - name: Install dependencies
         run: npm install
-        working-directory: ./TestBank
+        working-directory: ./correct-folder
 
-      - name: Build
+      - name: Build project
         run: npm run build
-        working-directory: ./TestBank
+        working-directory: ./correct-folder
 
       - name: Run tests
         run: npm test
-        working-directory: TestBank
+        working-directory: ./correct-folder
