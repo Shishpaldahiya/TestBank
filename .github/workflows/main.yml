@@ -2,35 +2,36 @@ name: CI Pipeline
 
 on:
   push:
-    branches: main
+    branches: [main]
   pull_request:
-    branches: main
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Show directory structure
-        run: ls -R
+      - name: Debug: Show directory structure
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "List of files:"
+          ls -la
+          echo "Full tree:"
+          find .
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      # Replace "./correct-folder" once we find the right path
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm install
-        working-directory: ./correct-folder
 
-      - name: Build project
+      - name: Build the Project
         run: npm run build
-        working-directory: ./correct-folder
 
-      - name: Run tests
+      - name: Run Tests
         run: npm test
-        working-directory: ./correct-folder
