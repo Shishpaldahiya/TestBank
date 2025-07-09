@@ -2,9 +2,9 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [main]
+    branches: main
   pull_request:
-    branches: [main]
+    branches: main
 
 jobs:
   build:
@@ -21,11 +21,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: TestBank
+        working-directory: ./TestBank
 
       - name: Build
         run: npm run build
-        working-directory: TestBank
+        working-directory: ./TestBank
 
       - name: Run tests
         run: npm test
