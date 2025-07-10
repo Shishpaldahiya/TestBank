@@ -1,0 +1,19 @@
+{
+  "name": "automating-the-hsbc-banking",
+  "version": "1.0.0",
+  "description": "automate the hsbc banking Assement ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shishpal Singh Dahiya",
+  "license": "ISC",
+  "dependencies": {
+    "automating-the-hsbc-banking": "file:",
+    "cypress": "^13.13.3",
+    "cypress-xpath": "^2.0.1"
+  },
+  "devDependencies": {
+    "cypress-iframe": "^1.0.1"
+  }
+}

@@ -1,0 +1,29 @@
+
+it('',()=>{
+
+        cy.viewport(1920, 1080);
+        cy.visit('https://www.hsbc.co.in/')
+        cy.xpath('//div[@aria-label="Log on options"]//a[@role="button"][normalize-space()="Log On"]').click()
+        //  check
+        cy.visit('https://www.hsbc.co.in/#modal')
+        cy.get('.crh-chevron-link__text')
+        cy.get('#pwsModalBody_link_1').click()
+        
+         //Also validate initially Continue button is disabled.
+        cy.xpath('//button[@id="username_submit_btn"]').should('be.disabled')  
+        cy.xpath('//input[@id="username"]').type('shishpaldahiya')
+        cy.xpath('//button[@id="username_submit_btn"]').should('not.be.disabled')
+         cy.xpath('//input[@id="rememberMe"]').should('not.be.checked')
+         cy.xpath('//span[@class="icon icon-circle-help-solid help-icon"]').should('exist').should('be.visible') // Assert that the tooltip is present
+         cy.xpath('//span[@class="icon icon-circle-help-solid help-icon"]').click()
+        cy.xpath('//span[normalize-space()="Username"]').should('exist').should('have.text', 'Username')
+        cy.xpath('//span[@class="icon icon-delete"]').should('be.visible')
+        cy.xpath('//span[@class="icon icon-delete"]').click()
+         
+         
+         
+         
+        
+    
+    
+      })

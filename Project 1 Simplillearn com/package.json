@@ -1,0 +1,15 @@
+{
+  "name": "package.json",
+  "version": "13.13.3",
+  "description": "Project 1 Simplilear website",
+  "main": "Global Setup",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shishpal Singh Dahiya",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.13.3",
+    "package.json": "file:"
+  }
+}
